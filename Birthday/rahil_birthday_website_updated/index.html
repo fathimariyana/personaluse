@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#fff4f7" />
+  <title>Happy Birthday, My Love 💗</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <section class="nickname-gate" id="nicknameGate" aria-label="A little personal surprise">
+    <div class="gate-glow glow-one"></div><div class="gate-glow glow-two"></div>
+    <div class="gate-card" id="nicknameStep">
+      <div class="gate-stamp">♡</div>
+      <p class="eyebrow">BEFORE YOUR SURPRISE BEGINS</p>
+      <h3  > <b>Njn entha anne vilikaar parnje kelkatteee 😌?</b></h3>
+      <p class="gate-copy">There is one little name that makes this whole page feel more special…</p>
+      <form id="nicknameForm" class="nickname-form">
+        <label class="sr-only" for="nicknameInput">What do I call you?</label>
+        <input id="nicknameInput" name="nickname" type="text" maxlength="32" placeholder="Type your special name here…" autocomplete="off" required />
+        <button class="primary-btn" type="submit">Let me see ♡</button>
+      </form>
+      <p class="gate-whisper">Psst… type the name i calls you ✨</p>
+    </div>
+    <div class="gate-card gate-reveal" id="nicknameReveal" hidden>
+      <div class="gate-confetti" aria-hidden="true">✦　♡　✧　♡　✦</div>
+      <p class="script">Hoo, that's too lovely…</p>
+
+      <h2 class="nickname-result" id="nicknameResult">My favourite person ♡</h2>
+      <p class="gate-copy">Of course, you're special. This little world was made just for you. 💗</p>
+      <button class="primary-btn" id="enterWebsiteBtn" type="button">kanunna ella sanom amrthi nokka and vayichum noknee ndhlum okke inadvum athil kettilee ,ini surprise kanan ivide njekkk 🦋</button>
+      <p class="gate-whisper">Made with love, just for you.</p>
+    </div>
+  </section>
+   <button class="music-btn" id="musicBtn" aria-pressed="false">
+  ♫ Play birthday music
+</button>
+
+<audio id="birthdayAudio" src="birthdaysong.mp3" loop></audio>
+  <div id="siteContent" hidden>
+  <div class="petals" aria-hidden="true"></div>
+  <header class="top-note">A little world made just for you ♡</header>
+
+  <main>
+    <section class="hero section" id="home">
+      <div class="eyebrow">TO MY FAVOURITE PERSON</div>
+      <div class="heart-orbit" aria-hidden="true">♡</div>
+      <p class="script">Today is all about you</p>
+      <h1>Happy Birthday,<br><span>My Love</span> 💗</h1>
+      <p class="intro">If I could wrap all my love into one little gift, it would look something like this.</p>
+      <button class="primary-btn" id="startBtn">Open your surprise <span>♡</span></button>
+      <div class="scroll-hint">SCROLL A LITTLE · THERE'S MORE ↓</div>
+    </section>
+
+    <section class="section candle-section" id="candle">
+      <p class="eyebrow">CLOSE YOUR EYES & MAKE A WISH</p>
+      <h2>A little birthday magic, just for you 🕯️</h2>
+      <p class="section-intro">Pettnn oru agarahm vicahrichee aloiknd petnnta😂😂😂, ennt light my candle enna buton click, candle oothikoooooo  not the point aa blow enna button click akkanmta allnd othytt karyla.</p>
+      <div class="birthday-candle-stage" id="candleScene">
+        <div class="cake-emoji" aria-hidden="true">🎂</div>
+        <div class="real-candle" aria-label="A pink birthday candle">
+          <span class="real-flame" id="flame"><i></i></span>
+          <span class="real-wick"></span>
+          <span class="real-candle-body">R</span>
+        </div>
+        <div class="cake-base"></div>
+        <div class="countdown" id="countdown" aria-live="polite">♡</div>
+      </div>
+      <p class="candle-status" id="candleStatus">Your candle is waiting for you… 💗</p>
+      <div class="candle-actions"><button class="primary-btn" id="startCandleBtn">Light my candle ✨</button><button class="primary-btn" id="blowWishBtn" disabled>Blow out the candle 💨</button></div>
+      <p class="birthday-cheer" id="birthdayCheer" hidden>YAYYY, YOU DID IT, BIRTHDAY BOY! 🥳💗</p>
+      <div class="butterfly-burst" id="butterflyBurst" aria-hidden="true"></div>
+      <p id="wishMessage" class="wish-message" hidden>May life give you a thousand reasons to smile — and may you always remember how loved you are. 💗</p><br><br>
+     
+    </section>
+
+    
+    <section class="section gift-section" id="gift">
+      <p class="eyebrow">A TINY VIRTUAL GIFT</p>
+      <h2>Something just for you 🎁</h2>
+      <p class="section-intro">It's not wrapped in a box, but it comes with all my love.</p>
+      <button class="gift-box" id="giftBtn" aria-expanded="false"><span>🎁</span><small>Tap to unwrap your gift</small></button>
+      <div class="gift-message" id="giftMessage" hidden><div class="gift-sparkle">✨ 💗 ✨</div><h3> <b>Your Gift is a promise 💗</b></h3><p>Ante eth situationilum njn indavum ante koode athym njn kore oke thaloodum but ottak akki povulata njn ponnahhh...athupole ante nalla swabavm mathrm iyy enod kanich perfect anenn varuthi therknda iyy engne ahnekilum enik anne baynkara ishtantaa🫣🫣🫣</p><p class="script">Always on your team — paathuuu ♡</p></div>
+    </section>
+
+   
+    <section class="section memories" id="memories">
+      <p class="eyebrow">LITTLE MOMENTS, BIG FEELINGS</p>
+      <h2>namk korch ormakal azhaveruthaalooo</h2>
+      <p class="section-intro">A tiny scrapbook of us — little moments, forever feelings. Add your favourite photos and keep our memories close.</p>
+      <div class="album-shell scrapbook-shell">
+        <div class="scrapbook-sticker sticker-heart">♡</div><div class="scrapbook-sticker sticker-sparkle">✦</div>
+        <div class="album-topline"><span>✂ OUR LITTLE SCRAPBOOK</span><span>MADE WITH LOVE ♡</span></div>
+        <div class="album-spread-wrap">
+          <button class="album-arrow spread-arrow" id="prevPhoto" aria-label="Previous scrapbook spread">‹</button>
+          <div class="scrapbook-grid" id="scrapbookGrid" aria-live="polite"></div>
+          <button class="album-arrow spread-arrow" id="nextPhoto" aria-label="Next scrapbook spread">›</button>
+        </div>
+        <div class="album-dots" id="albumDots" aria-label="Choose scrapbook spread"></div>
+        <p class="album-counter" id="albumCounter">PAGE 1 OF 3</p>
+      </div>
+      <p class="tiny-note"><b> ithil nmde entire story ind aa arrow amrthi nokane ,oru love symbol kannaile aynte adiyil adtha pagilkk povan illa arrow ind athu patnillel aynte adyil  page 1 of 3 enn prnj 3 dot ind athil oronilum ayi click akkiyamthy</b>.</p>
+      <div class="memory-note"><span>✎</span><p>Little moments become our favourite stories. Every photo is a tiny piece of my heart.</p></div>
+    </section>
+
+    <section class="section love-notes" id="reasons">
+      <p class="eyebrow">A LITTLE REMINDER FOR YOU</p>
+      <h2>Reasons you're so special to me 💌</h2>
+      <p class="section-intro">Ten little stars from my heart. Tap a glowing star, and let one of my favourite reasons unfold. ✨</p>
+      <div class="love-constellation" id="noteEnvelopeGrid" aria-live="polite"></div><div class="constellation-reveal" id="constellationReveal" hidden aria-live="polite"><span class="reveal-sparkle">✦</span><p class="constellation-kicker">A LITTLE TRUTH ABOUT YOU</p><h3 id="constellationTitle">You are special ♡</h3><p id="constellationMessage"></p><button class="text-btn" id="closeConstellationNote">Tuck this in my heart ♡</button></div>
+      <p class="tiny-note">Some words are small, but the love behind them is not. ♡</p>
+    </section>
+ <section class="section letter-section" id="letter">
+      <p class="eyebrow">SOMETHING FROM MY HEART</p>
+      <h2>A little letter for you 💌</h2>
+      <div class="envelope-wrap">
+        <button class="envelope" id="letterBtn" aria-expanded="false" aria-label="Open the birthday letter">
+          <span class="envelope-heart">♡</span>
+          <span class="envelope-label">Tap to open your letter</span>
+        </button>
+      </div>
+
+      <article class="letter" id="letterContent" hidden>
+        <p class="script">My dearest Kunjoooo,</p>
+        <p>edaaa iyy ente lifil vannath muthal kore karyngl change ayitt ind...
+           oraal enik ithrakk important avumnn njn there aloichatila...
+           ipo enth indelum enik ante muga panniye athym orma vara santhosham
+            anenkilum vishamam anenkilum okke chila nerath iyynte kode indavula 
+           but indavana timil njn atharkkum happy ahnda anneytt thalodum 
+           iyy varathen but njn athrkum relief avunnath apo ahn.Ethre Bzy anenkilum
+            anne ingne edk edk orma vrum naml karangn poythum okke oro couplesine kanumbo ksuhumb varum panniye ..but saralla korch naalode wait 
+            cheythal namk kettaloooo💃..
+          <br>   <br> enikk anne bayankara baynakra ishtanda  but ath  chila timil
+           express akkan pattarila pattiyalum dheshym aytt porthkk vara  
+          but aynte artham enik anne ishtallann allata enik ettavum ishta anneya
+           panniyee.... <br>kore kryngl annod pryn ind butt ente 
+          kettipiduthom dheshymom maraivim karanm kore karyngl njn marnn povenn
+           ath sadharana alle naml kore kaalm ingnene venam like
+           kalyanm kainjalum ee ishtathinum snehthinum krov onnum vararuth ipo
+            naml samrikunnath polem thalodana pole snehikana polem okke
+            life long indavanmpinne njn thaloodi kettipidichalum iyy vann oru
+             sory prnj ath angnd therknam 
+          enthokke ethre veliya prshnm vannalum nml orumich ath prnj solve
+           cheyth vekkanm ...enth indelum pettn thalootam thertholanm
+           njn therthen varila apo iyyne therkanm ...😌 <br>
+          chila tymil enik nalla pedi ahnda ithuvre ethyttt nmk orumich jevikan
+           patillen okke  iyy ente lifil athrem important ahnda  
+          
+          athond chila tymil iyy chodavum ath enik nalla reethik feel avane ...
+          ego vann namde relation orikkalum onnum sambavikkruth...
+
+          enik iyy epzhum happy ayi irikanth kanana ishtam iyy pinen karchil
+           vannlum nete munnil vach karyulalo veliya abimaani...😏 <br>
+          ith ezhuthumbo thanne njn kettipidich ahn iriknth 
+          ank orma indavan chance illa ann njn blood test cehyth vnnat vetil
+           irunnile apo thelenn riyante vetil povdann prnjtt njn akebad
+           arnn ennt annod onn irikan prnjpo pannik lokath illatha athrkk thirk...enik ath nannyi feel ayida enikrya ank onnum cheyan patilann...
+           dha ante messgae ...rply tharumzhkum poyi panniii
+          iyy venamnn vchlla but enikk inganathe kryngl okkr ipo feel avenne
+           ....inn nyt oru thall urpan ...njn mindand kidkum iyy choikum njn pryila
+           pinne thal avum ...😌😂 <br>enth indelum ennod prnjolota panniye solution
+            tharan patyilnkilm njn kelkan indlo...iyy epzhum strong ayi iriknm enn onnum
+            njn prynilla krchil vannal krynm but enne munnil mathy enn mthrm
+             ente pole anne ok akkan  arkkum ptilla ennan ente viswasam 😌... <br> thalloodit
+             anenkilum njn ath matty tharum njn anne judge cheyyum onnum iy 
+             vicharikndatta panniye... <br> <br>
+
+
+          ank avde kore vishmangl indenn enik aryada casum jolide preshnom okke
+           ennod kzhplaok anenn prnjlum ante mansil indenn ikkrya chila nerth ikk 
+          vishamam avum nmk venditt alle iyy poyenn aloichtt pinne annod ath prnjal
+           iyy ok akkumbo marum ikkryada iyy nmk vendi athrem effort idan indenn 
+          okke ellrem vitt avde kidnn nalla pani anenn okke in  sha allah ellam 
+          sheri avuda allah ind nmde koode illnkil pinne nmde engemnt vre kryngl
+           ethulalo ... okkem sheri avum ❤️😌 <br> 
+
+          njn anne pole oru chekkane kandtt illda sthym ayttum njn ethre
+           choodaylum enne kett irikkem ethre kettipidich irunnalum ethre
+            cherye krynglkk
+           kettipidchlum enne iyy ingne snehikanilleda thankuuuuuuuuu
+          kunju monthem enth resanennn aryo panniye anne kanan prethekich 
+          urkthinn enechal
+          enne vitttat povleta 😫😫😫... <br> ellrum pryum premicht kettn pove korchynja 
+          jeevich thodngumbo ithokke mrum ennoke nmk avrkk okke jeevich kanich
+           kodukkanm 
+          kettille.....😌  <br>
+
+          iyy enne ittatt povulann okke enikk ariyada , but oru tensiona enik 
+          epzhum namk kann thtto ellrem pole namkum hapy ayit kalynam kaikan ptille
+           angne okke athepole ennekalum nala oru kochine kandl iyy enne ittat
+            povoo ennoke ittat povulann okke  enikarayada but enik nalla tesnion 
+           enthanvoda
+          enikk anne athrakk athrak ishtam ahnda panniye athrkkum athrekkum 
+          athrkkum athrkkummmmmmmmmm
+          njn ethre lucky anenn aryo anne kittyathil anepole enne vere arum 
+          snehichatillada ethre njan kettipidichalum enne nannyi manasilakan ente
+           ella agrahanglum ndathi thran okkem enne athrkk ishtayondallda 
+          njn sherikkum nalla nalla luckya adutha janamam enn prnjtndhlum
+           indel iyy enne vann enne propose akkikolo ❤️😌.. <br> <br>kettikoloooo
+          athepole namml cherppathilll epozhellum kandt indavule eppzhavum
+           ennlum kandtt inadaavadaa...
+          <br>  <br>enik ipzhum orma ind iy ene propose akkiyth " <b>enikk iyaale 
+          nalla ishtaa..aloichtt prnjamthy"</b>..njn vann thirich prnjpo ante mugham 
+          kanam arnn santhoshm kond enth rasam arnnenn aryo panniye anne
+           kanan apoo  aa same kuniya face ahn ank urkathinn enekumbo  video callil 
+          anne kanan nala rasada apo anne kanan...😫 <br> <br> <br>
+
+          athupole njn kore agrhich kore expection okke aytt ahnta pnnaiye varane nannyi nokikolo iy nokumnn ikkrya ennlum prnjenn mathrm
+
+          <b>athikam onnula  ennum nml korcherm enkilum irunn samriknm ennummm annthe vishehsnglum kushumb paryalum okke ayitt..pinne ennum nyt kaloke uzhinj thara enik edk okke ravile chaya itt thara enne karangn kond povaa edk ente vetil kond akka ..enum rvile onnich enech orumma okke thara nettath..engdlum povan okke choikumbo kalipan ayi niknd samycharane😌angne okke ulluda athrk veliya agrhm onula ithraa okke illu enth indlum angndum ingdnum prnj solve akkan nokka enik ketipidichirikl indvum but njn pavlle iyum paavalle apo iyy therkkanm ath kettillee😚nmde edelthe prshnthin vetkre onnum edapeduthnd nmde rominte ullil kidknthin munne tehrnam  angne okkke illu</b>
+<br><br><br>
+          letter korch veluthaya prnj prnj kore ayinn thonan bordicha
+           vayichttt😂😂😂.... ayalum sahicho kore kryngl prnj but inim ndhokkkeyo pryn bakki
+           ilalpole ath ini orma varumbo ithupole epozhnkilum pryam ... <br>
+
+          aa  pinne choikan mrnn gift ishataya ank surprise ayonn onnum 
+          ikkryula krnm ante mogtth surprise enna vikaram vrilalo...njn ithond ahn
+           ann annod perfume vnagandann prnje apo avn vnagiche pttu pinne 
+           enthylum order akkilo enn vchttt njn athorth samthnich iyy vangicth
+            eduth vchtt njn thannth use akkiyamthytta...cake okke ishtaya ....
+          bakki ini vilikumbo choikkammmmm <br><br> 
+
+          apo  happy birthday my loveeeeeee.......😘❤️😘❤️😘❤️😘❤️😘❤️kore naal inngne haapy
+           ayitt jeevicholooo njn ennum ante koode indavum oru ozhiya 
+          baathyayiyy....luv uhhhhhh husbanddddd❤️❤️❤️❤️❤️😚😚😚😚😚
+        </p>
+        <p class="signoff">With all my love, always ♡<br><b>ante swantham wifee paathuuuu❤️</b></p>
+      </article>
+    </section>
+
+
+  </main>
+
+
+  <section class="section open-when-section" id="openWhen">
+    <p class="eyebrow">A LITTLE HUG FOR EVERY KIND OF DAY</p>
+    <h2>Open when you need me 💗</h2>
+    <p class="section-intro">If I could be beside you right now, I would give you the biggest hug. Tap below and let this little corner turn into a hug from me. 🫂</p>
+    <div class="open-when-grid">
+      <button class="when-card" data-note="Take a slow breath, love. You don't have to solve everything today. One small step is still progress, and I'm cheering for you. 🌷"><span>🌧️</span><b>When your day feels hard</b><small>Tap for a little comfort</small></button>
+      <button class="when-card" data-note="I hope you can see yourself the way I see you: someone with a good heart, so much potential, and a smile worth protecting. 🥹"><span>🪞</span><b>When you doubt yourself</b><small>Tap for a reminder</small></button>
+      <button class="when-card" data-note="Pause for a second and imagine the biggest hug from me. No fixing, no pressure — just a reminder that you matter and you deserve kindness. 🫂"><span>🫂</span><b>When you miss me</b><small>Tap for a virtual hug</small></button>
+      <button class="when-card" data-note="Today is your day! I hope you laugh loudly, eat something delicious, and make one lovely memory. You deserve to feel celebrated. 🎉"><span>☀️</span><b>When you need a smile</b><small>Tap for some sunshine</small></button>
+    </div>
+    <div class="when-reveal" id="whenReveal" hidden aria-live="polite"></div>
+    <button class="primary-btn hug-me-btn" id="hugMeBtn">I need your hug 🫂</button>
+  </section>
+  <div class="hug-overlay" id="hugOverlay" hidden role="dialog" aria-modal="true" aria-label="A big virtual hug">
+    <div class="hug-sky" id="hugSky" aria-hidden="true"></div><div class="hug-glow"></div>
+    <button class="hug-close" id="hugCloseBtn" aria-label="Close hug">×</button>
+    <div class="hug-center"><div class="hug-heart">💗</div><div class="hug-emoji">🫂</div><p class="script">Come here, my favourite person…</p><h2>A big, warm hug from me to you.</h2><p>No matter how far apart we are, I hope you can feel how much you mean to me. Breathe in, relax your shoulders, and stay in this hug for a little while. ♡</p><button class="primary-btn" id="hugAgainBtn">One more hug, please 🦋</button></div>
+  </div>
+
+  <section class="section date-ideas-section" id="dateIdeas">
+    <p class="eyebrow">A LITTLE PLAN FOR OUR NEXT MEMORY</p>
+    <h2>Pick our next mini date 🍓</h2>
+    <p class="section-intro">Tap the button and let the universe pick a simple idea for us.</p>
+    <div class="date-idea-card"><span id="dateIdeaEmoji">🍓</span><h3 id="dateIdeaTitle">A snack date</h3><p id="dateIdeaText">Get our favourite snacks and talk about everything and nothing.</p></div>
+    <button class="primary-btn" id="pickDateBtn">Choose another idea ✨</button>
+    <p class="tiny-note">The best dates don't need to be expensive — just time, care, and a little laughter.</p>
+  </section>
+
+
+  <section class="section final-note" id="finalNote"><p class="eyebrow">ONE LAST THING</p><h2>In every version of my tomorrow…</h2><p class="final-quote">I hope you find happiness, courage for your dreams, peace in your heart, and a thousand reasons to smile. Happy birthday, Rahil. You deserve beautiful things. ♡</p><button class="primary-btn" id="finalHeartsBtn">Send  a sky full of hearts 💗</button><div id="finalHearts" aria-hidden="true"></div></section>
+  <footer>Made with love, just for you ♡ <span>— paathuuu</span></footer>
+  <script src="script.js"></script>
+  </div>
+</body>
+</html>
