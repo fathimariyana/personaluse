@@ -348,30 +348,38 @@ body.hug-open { overflow:hidden; }
 .constellation-reveal > p:not(.constellation-kicker) { font:italic 1.15rem/1.85 'Playfair Display',serif; color:#805366; }
 .constellation-reveal .text-btn { text-decoration:none; border-radius:30px; background:#fff; border:1px solid #f0d0dc; }
 @media(max-width:560px) { .birthday-candle-stage { min-height:310px; } .love-constellation { grid-template-columns:repeat(2,minmax(0,1fr)); grid-template-rows:auto; padding:42px 12px 22px; gap:8px; } .constellation-star { min-height:108px; } .love-constellation:before { font-size:.49rem; letter-spacing:.1em; } .hug-overlay { padding:14px; } .hug-center { border-radius:24px; } .hug-center h2 { font-size:2.1rem; } }
-/* Increase the overall scrapbook height */
+
+/* Increase the overall scrapbook size */
 .scrapbook-shell {
   width: min(1200px, 100%);
   min-height: 700px;
   padding: 35px 30px;
 }
 
-/* Give the photo area more height */
+/* Make the photo spread taller */
 .album-spread-wrap {
+  position: relative;
   min-height: 650px;
+  display: grid;
+  grid-template-columns: 38px minmax(0, 1fr) 38px;
   align-items: stretch;
+  gap: 18px;
 }
 
-/* Make the photo cards bigger */
+/* Arrange photos in two columns */
 .scrapbook-grid {
+  display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 30px;
   width: 100%;
   align-items: stretch;
+  padding: 12px 4px 16px;
 }
 
-/* Increase each individual card size */
+/* Increase each photo card size */
 .scrapbook-tile {
   width: 100%;
+  min-width: 0;
   min-height: 400px;
   padding: 16px;
   box-sizing: border-box;
@@ -379,16 +387,19 @@ body.hug-open { overflow:hidden; }
   flex-direction: column;
 }
 
-/* Let the image use more vertical space */
+/* Increase the photo display area */
 .scrapbook-image-frame {
   width: 100%;
   height: 350px;
   aspect-ratio: auto;
+  position: relative;
   overflow: hidden;
 }
 
-/* Display the complete image without cropping */
+/* Show the full image without cropping */
 .scrapbook-image-frame img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: contain;
@@ -397,43 +408,19 @@ body.hug-open { overflow:hidden; }
 
 /* Keep captions visible */
 .scrapbook-tile figcaption {
-  padding-top: 14px;
+  padding: 14px 3px 0;
   font-size: 1rem;
+  line-height: 1.5;
+  text-align: center;
 }
 
-/* Mobile responsive */
-@media (max-width: 600px) {
-  .scrapbook-shell {
-    min-height: auto;
-    padding: 20px 12px;
-  }
-
-  .album-spread-wrap {
-    min-height: auto;
-  }
-
-  .scrapbook-grid {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
-
-  .scrapbook-tile {
-    min-height: auto;
-  }
-
-  .scrapbook-image-frame {
-    height: 400px;
-  }
- .album-spread-wrap {
-  position: relative;
-}
-
+/* Position previous and next arrows */
 #prevPhoto,
 #nextPhoto {
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
   z-index: 100;
+  transform: translateY(-50%);
 }
 
 #prevPhoto {
@@ -443,5 +430,65 @@ body.hug-open { overflow:hidden; }
 #nextPhoto {
   right: 0;
 }
+
+/* Tablet and mobile responsive layout */
+@media (max-width: 600px) {
+  .scrapbook-shell {
+    width: 100%;
+    min-height: auto;
+    padding: 20px 12px;
+  }
+
+  .album-spread-wrap {
+    min-height: auto;
+    grid-template-columns: 28px minmax(0, 1fr) 28px;
+    gap: 4px;
+  }
+
+  .scrapbook-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 10px 2px;
+  }
+
+  .scrapbook-tile {
+    min-height: auto;
+    padding: 10px;
+  }
+
+  .scrapbook-image-frame {
+    height: 400px;
+  }
+
+  .scrapbook-tile figcaption {
+    font-size: 0.9rem;
+  }
+
+  #prevPhoto {
+    left: -2px;
+  }
+
+  #nextPhoto {
+    right: -2px;
+  }
+}
+
+/* Small mobile screens */
+@media (max-width: 400px) {
+  .scrapbook-shell {
+    padding: 16px 8px;
+  }
+
+  .scrapbook-image-frame {
+    height: 320px;
+  }
+
+  .scrapbook-tile {
+    padding: 8px;
+  }
+
+  .scrapbook-tile figcaption {
+    font-size: 0.8rem;
+  }
 
 }
