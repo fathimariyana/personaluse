@@ -307,7 +307,26 @@ footer span { color:var(--pink); }
 @keyframes celebrateGlow { from { box-shadow:0 24px 65px #a7436714,0 0 0 0 #f5bad0a0; } to { box-shadow:0 24px 65px #a7436725,0 0 0 12px #f5bad02b; } }
 
 /* A full-screen, immersive virtual hug */
-.hug-overlay { position:fixed; inset:0; z-index:10000; display:grid; place-items:center; padding:22px; overflow:hidden; background:radial-gradient(circle at 50% 42%,#fff8fb 0,#ffeaf2 42%,#eab6cb 100%); isolation:isolate; }
+.hug-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: grid;
+  place-items: center;
+  padding: max(16px, env(safe-area-inset-top))
+           16px
+           max(16px, env(safe-area-inset-bottom));
+  overflow-y: auto;
+  overflow-x: hidden;
+  background: radial-gradient(
+    circle at 50% 42%,
+    #fff8fb 0,
+    #ffeaf2 42%,
+    #eab6cb 100%
+  );
+  isolation: isolate;
+  box-sizing: border-box;
+}
 .hug-overlay[hidden] { display:none !important; }
 body.hug-open { overflow:hidden; }
 .hug-sky { position:absolute; inset:0; overflow:hidden; pointer-events:none; z-index:-1; }
@@ -315,7 +334,19 @@ body.hug-open { overflow:hidden; }
 @keyframes hugFloat { 0% { transform:translate3d(0,0,0) rotate(0) scale(.65); opacity:0; } 12% { opacity:.9; } 80% { opacity:.8; } 100% { transform:translate3d(35px,-120vh,0) rotate(35deg) scale(1.2); opacity:0; } }
 .hug-glow { position:absolute; width:min(95vw,780px); aspect-ratio:1; border-radius:50%; background:#fff8fb90; filter:blur(8px); z-index:-1; animation:hugPulse 2.6s ease-in-out infinite; }
 @keyframes hugPulse { 0%,100% { transform:scale(.9); opacity:.55; } 50% { transform:scale(1.08); opacity:.95; } }
-.hug-center { width:min(590px,100%); padding:clamp(25px,6vw,55px) clamp(20px,5vw,44px); border:1px solid #ffffffd9; border-radius:32px; background:#fffafce8; box-shadow:0 25px 100px #a94f702b; text-align:center; animation:hugArrive .7s cubic-bezier(.2,.8,.2,1) both; backdrop-filter:blur(10px); }
+.hug-center {
+  width: 100%;
+  max-width: 590px;
+  box-sizing: border-box;
+  padding: clamp(20px, 5vw, 44px);
+  border: 1px solid #ffffffd9;
+  border-radius: 28px;
+  background: #fffafce8;
+  box-shadow: 0 25px 100px #a94f702b;
+  text-align: center;
+  animation: hugArrive .7s cubic-bezier(.2,.8,.2,1) both;
+  backdrop-filter: blur(10px);
+}
 @keyframes hugArrive { from { opacity:0; transform:scale(.78) translateY(35px); } to { opacity:1; transform:scale(1) translateY(0); } }
 .hug-heart { font-size:2.8rem; animation:heartBeat 1.2s ease-in-out infinite; }
 .hug-emoji { font-size:clamp(4rem,15vw,7rem); line-height:1.15; margin:8px 0; filter:drop-shadow(0 12px 15px #d65e8620); animation:hugSqueeze 2s ease-in-out infinite; }
@@ -445,20 +476,24 @@ body.hug-open { overflow:hidden; }
     gap: 4px;
   }
 
-  .scrapbook-grid {
-    grid-template-columns: 1fr;
-    gap: 24px;
-    padding: 10px 2px;
-  }
+ .scrapbook-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  width: 100%;
+  padding: 12px 4px;
+}
 
   .scrapbook-tile {
     min-height: auto;
     padding: 10px;
   }
 
-  .scrapbook-image-frame {
-    height: 400px;
-  }
+.scrapbook-image-frame {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
 
   .scrapbook-tile figcaption {
     font-size: 0.9rem;
@@ -473,22 +508,167 @@ body.hug-open { overflow:hidden; }
   }
 }
 
-/* Small mobile screens */
-@media (max-width: 400px) {
+/* Scrapbook desktop and mobile fix */
+.scrapbook-shell {
+  width: min(1200px, 100%);
+  min-width: 0;
+  min-height: 0;
+  padding: 30px;
+  box-sizing: border-box;
+}
+
+.album-spread-wrap {
+  width: 100%;
+  min-width: 0;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: 38px minmax(0, 1fr) 38px;
+  align-items: center;
+  gap: 12px;
+}
+
+.scrapbook-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  width: 100%;
+  min-width: 0;
+  padding: 12px 4px 16px;
+}
+
+.scrapbook-tile {
+  width: 100%;
+  min-width: 0;
+  min-height: 0;
+  height: auto;
+  padding: 12px;
+  box-sizing: border-box;
+}
+
+.scrapbook-image-frame {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  position: relative;
+  overflow: hidden;
+}
+
+.scrapbook-image-frame img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.scrapbook-tile figcaption {
+  padding: 12px 3px 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+  text-align: center;
+}
+
+#prevPhoto,
+#nextPhoto {
+  position: static;
+  transform: none;
+  width: 38px;
+  height: 38px;
+  z-index: 2;
+}
+
+@media (max-width: 600px) {
   .scrapbook-shell {
-    padding: 16px 8px;
+    width: 100%;
+    padding: 18px 8px;
+    overflow: hidden;
   }
 
-  .scrapbook-image-frame {
-    height: 320px;
+  .album-spread-wrap {
+    grid-template-columns: 26px minmax(0, 1fr) 26px;
+    gap: 4px;
+  }
+
+  .scrapbook-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    padding: 10px 2px;
   }
 
   .scrapbook-tile {
-    padding: 8px;
+    padding: 7px 5px 9px;
+  }
+
+  .scrapbook-image-frame {
+    aspect-ratio: 1 / 1;
   }
 
   .scrapbook-tile figcaption {
-    font-size: 0.8rem;
+    font-size: 0.72rem;
+    line-height: 1.4;
   }
 
+  #prevPhoto,
+  #nextPhoto {
+    width: 26px;
+    height: 30px;
+    padding: 0;
+    font-size: 1.2rem;
+  }
 }
+
+@media (max-width: 380px) {
+  .scrapbook-grid {
+    gap: 7px;
+  }
+
+  .scrapbook-tile {
+    padding: 5px 4px 8px;
+  }
+
+  .scrapbook-tile figcaption {
+    font-size: 0.65rem;
+  }
+  @media (max-width: 600px) {
+  .hug-overlay {
+    padding: 60px 14px 20px;
+  }
+
+  .hug-center {
+    padding: 24px 18px;
+    border-radius: 22px;
+  }
+
+  .hug-center h2 {
+    font-size: clamp(1.7rem, 7vw, 2.3rem);
+    line-height: 1.2;
+  }
+
+  .hug-center > p:not(.script) {
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+  .hug-emoji {
+    font-size: clamp(4rem, 20vw, 6rem);
+  }
+
+  .hug-close {
+    top: max(12px, env(safe-area-inset-top));
+    right: 12px;
+    width: 42px;
+    height: 42px;
+  }
+
+  .hug-center .primary-btn {
+    max-width: 100%;
+    white-space: normal;
+  }
+}c
+}
+
+
+
+
