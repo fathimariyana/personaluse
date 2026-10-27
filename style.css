@@ -631,7 +631,7 @@ body.hug-open { overflow:hidden; }
   .scrapbook-tile figcaption {
     font-size: 0.65rem;
   }
-  
+ 
 /* Full-screen romantic hug page */
 .hug-overlay {
   position: fixed;
@@ -757,6 +757,7 @@ body.hug-open {
     right: 12px;
   }
 }
+
 
   }
 
